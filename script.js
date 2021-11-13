@@ -19,22 +19,50 @@ quindi il task potrà essere anche segnato come done e non per forza cancellato
 poi se l’utente vuole potrà anche cancellarlo del tutto. */
 
 var app = new Vue (
-{
-    el : "#container",
-    data: {
-        show: true,
-        newTask : "",
-        tasks : [
-            {text: 'fare la spesa', done: true },
-            {text: 'fare il bucato', done: true },
-            {text: 'cucinare la pasta', done: true },
-            {text: 'fare il letto', done: true },
-            {text: 'andare a prendere i bambini', done: true },
-            {text: ' andare a lavorare', done: true }
-        ]
-        
-    },
-  
+    {
+        el : "#container",
+        data: {
+            show: "true",
+            newTask : "", 
+            tasks : [
+                {text: 'fare la spesa',
+                done: false },
+                {text: 'fare il bucato',
+                done: false },
+                {text: 'cucinare la pasta',
+                done: false },
+                {text: 'fare il letto',
+                done: false },
+                {text: 'andare a prendere i bambini',
+                done: false },
+                {text: 'andare a lavorare',
+                done: false }
+            ]
+            
+        },
+        /* qui metterò method con la funzione per aggiungere */
+        methods: {
+            removeTask (index){
+                this.tasks.splice(index, 1);
+            },
+            
+            addTask () {
+                 this.tasks.push(this.newTask); 
+                 this.newTask = {
+                    text:'',
+                    done: false
+                 
+                } 
+            },
+            barTask (index) {
+                if(this.tasks[index].done){
+                    this.tasks[index].done= false;
+                } else {
+                    this.tasks[index].done=true;
+                }
+            }, 
+        }
 
-}
+
+    }  
 );

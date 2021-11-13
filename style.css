@@ -8,3 +8,28 @@
     text-align: center;
     margin-top: 20px;
 }
+
+.barra {
+    color: blue;
+    background-color: rgb(161, 161, 161) ;
+}
+
+.remove {
+    color: red;
+    background-color: rgb(161, 161, 161) ;
+}
+button {
+    padding: 2px 4px;
+    text-decoration: none;
+
+}
+
+li {
+    margin: 5px;
+}
+
+.textbarrato {
+    text-decoration: line-through;
+}
+
+

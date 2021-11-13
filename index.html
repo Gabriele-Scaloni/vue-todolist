@@ -9,20 +9,18 @@
 </head>
 <body>
     <div id="container">
-        <h2>Lista todo</h2>
+        <h2>Lista to do</h2>
         
-        <input type="text" placeholder="scrivi qui">
-     <!-- @click ="addTask" -->   <button >inserisci altre cose da fare </button>
+        <input type="text" v-model="newTask.text" placeholder="scrivi qui">
+        <button @click ="addTask">inserisci altre cose da fare </button>
         <ul>
-            <li v-for="task in tasks" key="i" :class="task.done===true">
+            <li v-for="task, i in tasks" key="i" :class="task.done === true ? 'textbarrato' : ''" > 
                 {{task.text}}
-
-               
-
+                <button class="barra" @click ="barTask(i)">barra</button>
+                <button class="remove" @click ="removeTask(i)"> rimuovi </button>
             </li>
-        </ul> <span> fa-plus-square</span>
-                <span> fa-ban</span>
-        
+
+        </ul>
     </div>
 
 
